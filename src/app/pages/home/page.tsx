@@ -37,7 +37,7 @@ export default function Home() {
                                 </svg>
                                 <div className="flex flex-col w-80 pb-10">
                                     <p className="text-xl font-sans text-slate-500 m-8">Interfaces</p>
-                                    <p className="text-gray-500">Conçu pour offrir une expérience visuelle épurée et élégante. Avec une interface intuitive et un design minimaliste, il met en valeur l'essentiel pour garantir une navigation fluide et agréable.</p>
+                                    <p className="text-gray-500">Conçu pour offrir une expérienceeeeeeeeeee visuelle épurée et élégante. Avec une interface intuitive et un design minimaliste, il met en valeur l'essentiel pour garantir une navigation fluide et agréable.</p>
                                 </div>
                             </div>
                         </div>
