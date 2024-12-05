@@ -1,4 +1,5 @@
 import ContactSection from "@/components/contact";
+import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 export default function Home() {
     return (
@@ -22,7 +23,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="py-10" id="features">
+            <section className="py-10 bg-gray-50" id="features">
                 <div className="container mx-auto text-center px-4">
                     <h1 className="text-2xl font-bold text-indigo-900 m-10">
                         Fonctionnalités
@@ -31,7 +32,7 @@ export default function Home() {
                         Cet outil est développé par des entrepreneurs pour des entrepreneurs et vise à optimiser un maximum la gestion des plannings.
                     </p>
                     <div className="flex flex-col p-4 md:flex-row gap-8 justify-center ">
-                        <div className="border-gray-200 border p-10 rounded-lg hover:shadow-xl hover:shadow-gray-200/50">
+                        <div className="border-gray-100 border p-10 rounded-lg hover:shadow-xl bg-white hover:shadow-gray-200/50">
                             <div className="flex flex-col items-center">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 text-yellow-300">
@@ -44,7 +45,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-gray-200 border p-10 rounded-lg hover:shadow-xl hover:shadow-gray-200/50">
+                        <div className="border-gray-100 border p-10 rounded-lg hover:shadow-xl bg-white hover:shadow-gray-200/50">
                             <div className="flex flex-col items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-12 text-yellow-300">
                                     <path fillRule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clipRule="evenodd" />
@@ -55,7 +56,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className="border-gray-200 border p-10 rounded-lg hover:shadow-xl hover:shadow-gray-200/50">
+                        <div className="border-gray-100 border p-10 rounded-lg hover:shadow-xl bg-white hover:shadow-gray-200/50">
                             <div className="flex flex-col items-center">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-12 text-yellow-300">
@@ -72,6 +73,7 @@ export default function Home() {
                 </div>
             </section>
             <ContactSection></ContactSection>
+            <Footer></Footer>
         </>
 
     );

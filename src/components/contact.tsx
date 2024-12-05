@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactSection() {
     return (
-        <div className="bg-gray-50 flex items-center justify-center py-28">
+        <div className=" flex items-center justify-center py-28">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className='p-3'>
@@ -55,7 +55,7 @@ export default function ContactSection() {
                                 <input
                                     type="text"
                                     id="name"
-                                    placeholder=" Votre nom"
+                                    placeholder=' Votre nom'
                                     className="w-full mt-1 p-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500"
                                 />
                                 <button
