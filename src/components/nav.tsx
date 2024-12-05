@@ -38,7 +38,7 @@ export default function Nav() {
                     <a href="#signup" className="px-4 py-2 text-sm text-white bg-teal-500 rounded-full hover:bg-teal-600 font-semibold">Sign In</a>
                 </div>
                 <div
-                    className="md:hidden flex items-center cursor-pointer"
+                    className="md:hidden flex items-center cursor-pointer p-2"
                     onClick={() => setOpenNav(!openNav)}
                 >
                     <svg
