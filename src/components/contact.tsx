@@ -2,20 +2,19 @@ import React from 'react';
 
 export default function ContactSection() {
     return (
-        <div className="bg-gray-50 min-h-screen flex items-center justify-center py-12">
-            <div className="container mx-auto px-6 lg:px-16">
+        <div className="bg-gray-50 flex items-center justify-center py-28">
+            <div className="container mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div >
                         <h2 className="text-2xl font-bold text-indigo-900 mb-4">Prendre contact</h2>
                         <p className="text-gray-600 mb-6">
                             Nous apprécions chaque client et nous sommes fiers de leur fidélité pour le projet.
                         </p>
-                        <div className='mt-9'>
-                            <h3 className="text-xl font-semibold text-indigo-900 mb-9">Find Us on Map</h3>
+                        <div className='mt-12'>
+                            <h3 className="text-xl font-semibold text-indigo-900 mb-12">Ou nous trouver ?</h3>
                             
                             <div className="">
-                                <iframe width="600" height="300" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=52.70967533219885, -8.020019531250002&amp;q=1%20Grafton%20Street%2C%20Dublin%2C%20Ireland&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"></iframe><br />
-                            </div>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158.13201063452576!2d3.0626942998344715!3d50.643607904544986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c32a79ee422073%3A0xff4fe498fd24fa0e!2s64%20Av.%20du%20Peuple%20Belge%2C%2059800%20Lille!5e0!3m2!1sfr!2sfr!4v1733414248272!5m2!1sfr!2sfr" width="600" height="300"></iframe></div>
                         </div>
                     </div>
                     <div>
