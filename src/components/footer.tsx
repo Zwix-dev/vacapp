@@ -1,14 +1,13 @@
 export default function Footer() {
     return (
         <footer className="shadow-sm bg-gray-50">
-            <div className="flex flex-col md:flex-row text-indigo-900 pt-3">
-                <div className="mx-auto flex flex-col ">
+            <div className="container mx-auto flex flex-col items-center justify-between md:flex-row text-indigo-900 pt-3  ">
+                <div className="">
                     <p className="text-2xl font-bold">Vac'Acti<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12 inline align-middle ml-2 text-yellow-400"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>n</p>
-                    <p className="text-xs text-gray-700 font-sans">Made with ❤️ by Arthur Duval.</p>
                 </div>
                 <div className="flex flex-col md:flex-row gap-3 text-indigo-900 mt-1 justify-center items-center">
                     <button>
-                        <svg xmlns="http://www.w3.org/2000/svg"className="h-8"viewBox="0 0 256 256">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8" viewBox="0 0 256 256">
                             <g fill="#312e81" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}
                             >
                                 <g transform="scale(8.53333,8.53333)">
@@ -30,6 +29,9 @@ export default function Footer() {
 
                     </button>
                 </div>
+            </div>
+            <div className="flex flex-col">
+                <p className="text-xs text-gray-700 font-sans mx-auto">Made with ❤️ by Arthur Duval.</p>
             </div>
         </footer>
     )
