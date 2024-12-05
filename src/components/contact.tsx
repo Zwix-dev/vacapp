@@ -14,7 +14,7 @@ export default function ContactSection() {
                             <h3 className="text-xl font-semibold text-indigo-900 mb-12">Ou nous trouver ?</h3>
                             
                             <div className="">
-                                <iframe className='mx-auto h-[300px] sm:h-[450px] sm:w-[600px] md:h-[500px] md:w-[600px] lg:h-[450px] xl:h-[300px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158.13201063452576!2d3.0626942998344715!3d50.643607904544986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c32a79ee422073%3A0xff4fe498fd24fa0e!2s64%20Av.%20du%20Peuple%20Belge%2C%2059800%20Lille!5e0!3m2!1sfr!2sfr!4v1733414248272!5m2!1sfr!2sfr" ></iframe>
+                                <iframe className='h-[300px] sm:h-[450px] sm:w-[600px] md:h-[500px] md:w-[600px] lg:h-[450px] xl:h-[300px]' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158.13201063452576!2d3.0626942998344715!3d50.643607904544986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c32a79ee422073%3A0xff4fe498fd24fa0e!2s64%20Av.%20du%20Peuple%20Belge%2C%2059800%20Lille!5e0!3m2!1sfr!2sfr!4v1733414248272!5m2!1sfr!2sfr" ></iframe>
                             </div>
                         </div>
                     </div>
