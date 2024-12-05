@@ -30,7 +30,7 @@ export default function Footer() {
                     </button>
                 </div>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col p-2">
                 <p className="text-xs text-gray-700 font-sans mx-auto">Made with ❤️ by Arthur Duval.</p>
             </div>
         </footer>
