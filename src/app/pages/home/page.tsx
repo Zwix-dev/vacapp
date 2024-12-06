@@ -1,6 +1,7 @@
 import ContactSection from "@/components/contact";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
+
 export default function Home() {
     return (
         <>
@@ -73,7 +74,7 @@ export default function Home() {
                 </div>
             </section>
             <ContactSection></ContactSection>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </>
 
     );
