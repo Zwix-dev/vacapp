@@ -59,13 +59,15 @@ export default function Nav() {
                     {session ?
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <button className="rounded-xl outline-none"><Avatar>
-                                    <AvatarImage src={session ? session.user.image : "https://img.freepik.com/vecteurs-premium/icone-profil-avatar-par-defaut-image-utilisateur-medias-sociaux-icone-avatar-gris-silhouette-profil-vierge-illustration-vectorielle_561158-3467.jpg"} alt="@shadcn" />
-                                </Avatar></button>
+                                <button className="rounded-xl outline-none">
+                                    <Avatar>
+                                        <AvatarImage src={session?.user?.image ?? "https://img.freepik.com/vecteurs-premium/icone-profil-avatar-par-defaut-image-utilisateur-medias-sociaux-icone-avatar-gris-silhouette-profil-vierge-illustration-vectorielle_561158-3467.jpg"} alt="@shadcn" />                                              </Avatar>
+                                </button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-44">
                                 <DropdownMenuLabel>
-                                    {session.user.name}
+                                    {session.user && session.user.name}
+
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
@@ -151,42 +153,43 @@ export default function Nav() {
                             session ?
                                 <div>
                                     <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <button className="rounded-xl outline-none"><Avatar>
-                                    <AvatarImage src={session ? session.user.image : "https://img.freepik.com/vecteurs-premium/icone-profil-avatar-par-defaut-image-utilisateur-medias-sociaux-icone-avatar-gris-silhouette-profil-vierge-illustration-vectorielle_561158-3467.jpg"} alt="@shadcn" />
-                                </Avatar></button>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-screen">
-                                <DropdownMenuLabel>
-                                    {session.user.name}
-                                </DropdownMenuLabel>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuGroup>
-                                    <DropdownMenuItem>
-                                        <User></User>
-                                        <a href="#profile" className="block text-sm hover:text-gray-900">Profile</a>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
-                                        <Github />
-                                        <span>GitHub</span>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <LifeBuoy />
-                                        <span>Support</span>
-                                    </DropdownMenuItem>
-                                    <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
-                                        <LogOut></LogOut>
-                                        <a href="#logout" className="block  text-sm hover:text-gray-900">Logout</a>
-                                    </DropdownMenuItem>
-                                </DropdownMenuGroup>
+                                        <DropdownMenuTrigger asChild>
+                                            <button className="rounded-xl outline-none">
+                                                <Avatar>
+                                                    <AvatarImage src={session?.user?.image ?? "https://img.freepik.com/vecteurs-premium/icone-profil-avatar-par-defaut-image-utilisateur-medias-sociaux-icone-avatar-gris-silhouette-profil-vierge-illustration-vectorielle_561158-3467.jpg"} alt="@shadcn" />                                              </Avatar>
+                                            </button>
+                                        </DropdownMenuTrigger>
+                                        <DropdownMenuContent className="w-screen">
+                                            <DropdownMenuLabel>
+                                                {session.user && session.user.name}
+                                            </DropdownMenuLabel>
+                                            <DropdownMenuSeparator />
+                                            <DropdownMenuGroup>
+                                                <DropdownMenuItem>
+                                                    <User></User>
+                                                    <a href="#profile" className="block text-sm hover:text-gray-900">Profile</a>
+                                                </DropdownMenuItem>
+                                                <DropdownMenuSeparator />
+                                                <DropdownMenuItem>
+                                                    <AppWindow />
+                                                    <span>Dashboard</span>
+                                                </DropdownMenuItem>
+                                                <DropdownMenuItem>
+                                                    <Settings />
+                                                    <span>Paramètres</span>
+                                                </DropdownMenuItem>
+                                                <DropdownMenuSeparator />
+                                                <DropdownMenuItem>
+                                                    <LogOut></LogOut>
+                                                    <a href="#logout" className="block  text-sm hover:text-gray-900">Logout</a>
+                                                </DropdownMenuItem>
+                                            </DropdownMenuGroup>
 
 
-                            </DropdownMenuContent>
+                                        </DropdownMenuContent>
 
 
-                        </DropdownMenu>
+                                    </DropdownMenu>
 
                                 </div>
 
