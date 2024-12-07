@@ -130,7 +130,7 @@ export default function Nav() {
             </div>
             {openNav && (
                 <div className="md:hidden bg-white shadow-md py-4">
-                    <div className="flex flex-col items-center space-y-4">
+                    <div className="flex flex-col items-center justify-center space-y-4">
                         <a
                             href="#"
                             className="text-indigo-900 font-semibold hover:text-yellow-300"
@@ -194,7 +194,7 @@ export default function Nav() {
                                 </div>
 
                                 :
-                                <div className="flex flex-col">
+                                <div className="flex flex-col ">
                                     <a
                                         href="#signin"
                                         className="text-sm text-indigo-900 font-semibold hover:text-yellow-300"
