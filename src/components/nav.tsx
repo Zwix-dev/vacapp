@@ -194,7 +194,7 @@ export default function Nav() {
                                 </div>
 
                                 :
-                                <div>
+                                <div className="flex flex-col">
                                     <a
                                         href="#signin"
                                         className="text-sm text-indigo-900 font-semibold hover:text-yellow-300"
