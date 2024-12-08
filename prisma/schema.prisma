@@ -23,6 +23,7 @@ model User {
   updatedAt DateTime @updatedAt
 }
  
+ 
 model Account {
   userId            String
   type              String
