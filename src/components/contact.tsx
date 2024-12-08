@@ -51,7 +51,6 @@ export default function ContactSection() {
                                 NOM
                             </label>
                             <div className='flex flex-row gap-8'>
-
                                 <input
                                     type="text"
                                     id="name"
