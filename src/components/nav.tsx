@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import {
     DropdownMenu,
@@ -16,8 +16,8 @@ import {
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
 import { User, LogOut, Settings, LifeBuoy, AppWindow } from "lucide-react"
+import {logout} from '@/actions/logout';
 export default function Nav() {
 
     const { data: session } = useSession();
@@ -26,7 +26,6 @@ export default function Nav() {
     }
 
     const [openNav, setOpenNav] = React.useState(false);
-
     const handleWindowResize = () =>
         window.innerWidth >= 960 && setOpenNav(false);
 
@@ -54,10 +53,13 @@ export default function Nav() {
                         Prix
                     </a>
                 </div>
-
+             
+        
                 <div className=" hidden md:flex  items-center space-x-4">
                     {session ?
+                    
                         <DropdownMenu>
+                            
                             <DropdownMenuTrigger asChild>
                                 <button className="rounded-xl outline-none">
                                     <Avatar>
@@ -71,23 +73,23 @@ export default function Nav() {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="hover:bg-gray-200 hover:cursor-pointer">
                                         <User></User>
                                         <a href="#profile" className="block text-sm hover:text-gray-900">Profile</a>
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="hover:cursor-pointer hover:bg-gray-200">
                                         <AppWindow />
                                         <span>Dashboard</span>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="hover:cursor-pointer hover:bg-gray-200">
                                         <Settings />
                                         <span>Paramètres</span>
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator />
-                                    <DropdownMenuItem>
+                                    <DropdownMenuItem className="hover:bg-gray-200 hover:cursor-pointer">
                                         <LogOut></LogOut>
-                                        <a href="#logout" className="block  text-sm hover:text-gray-900">Logout</a>
+                                        <button onClick={() => signOut()}><a className="block text-sm hover:text-gray-900">Logout</a></button>
                                     </DropdownMenuItem>
                                 </DropdownMenuGroup>
 
@@ -98,11 +100,9 @@ export default function Nav() {
                         </DropdownMenu>
 
                         :
-                        <div>
-                            <a href="#signin" className="text-sm text-indigo-900 font-semibold hover:text-yellow-300">
-                                Log In
-                            </a>
-                            <a href="#signup" className="px-4 py-2 text-sm text-white bg-teal-500 rounded-full hover:bg-teal-600 font-semibold">Sign In</a>
+                        <div className="flex flex-row items-center justify-center">
+                           
+                            <a href="/api/auth/signin" className="px-4 py-2 text-sm text-white bg-teal-500 rounded-full hover:bg-teal-600 font-semibold">Log In</a>
 
                         </div>
                     }
@@ -151,7 +151,9 @@ export default function Nav() {
                         </a>
                         {
                             session ?
+                            
                                 <div>
+                                    
                                     <DropdownMenu>
                                         <DropdownMenuTrigger asChild>
                                             <button className="rounded-xl outline-none">
@@ -195,18 +197,9 @@ export default function Nav() {
 
                                 :
                                 <div className="flex flex-col ">
-                                    <a
-                                        href="#signin"
-                                        className="text-sm text-indigo-900 font-semibold hover:text-yellow-300"
-                                    >
-                                        Log In
-                                    </a>
-                                    <a
-                                        href="#signup"
-                                        className="px-4 py-2 text-sm text-white bg-teal-500 rounded-full hover:bg-teal-600 font-semibold"
-                                    >
-                                        Sign In
-                                    </a>
+                                     <a href="/api/auth/signin" className="px-4 py-2 text-sm text-white bg-teal-500 rounded-full hover:bg-teal-600 font-semibold">Log In</a>
+
+                                    
                                 </div>
                         }
 
