@@ -11,9 +11,6 @@ export function RegisterForm() {
     const router = useRouter();
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const handleRegisterClick = () => {
-        router.push("/register");
-    }
     async function onSubmit(event: { preventDefault: () => void; currentTarget: HTMLFormElement | undefined; }) {
         event.preventDefault();
         setIsLoading(true);
@@ -25,7 +22,7 @@ export function RegisterForm() {
                 setError(response.error);
                 setIsLoading(false);
             } else {
-                router.push("/login");
+                router.push("/auth/login");
             }
         } catch (e) {
             setError(error);
@@ -56,7 +53,7 @@ export function RegisterForm() {
                         <Label htmlFor="confirm-password" >Confirm Password</Label>
                         <Input id="confirm-password" name='confirm-password' type="password" required />
                     </div>
-                    <Button className="w-full" type="submit" disabled={isLoading}>
+                    <Button className="w-full bg-teal-500" type="submit" disabled={isLoading}>
                         {isLoading ? (
                             <span className="flex items-center justify-center">
                                 <Loader2 className="animate-spin"></Loader2>

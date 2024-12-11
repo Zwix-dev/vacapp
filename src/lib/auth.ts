@@ -11,7 +11,7 @@ import { NextAuthOptions } from "next-auth";
 
 export const authOptions : NextAuthOptions = {
   pages : {
-    signIn : '/sign-in'
+    signIn: "/auth/login",
   },
   providers: [
     GithubProvider({
@@ -32,9 +32,8 @@ export const authOptions : NextAuthOptions = {
           const user = await getUserByEmail(credentials.email);
           if (user) {
             const isMatch = await compare(credentials.password,user.password);
-            console.log(isMatch);
             if (isMatch) {
-            
+              
               return user;
             } else {
               throw new Error("Invalid password.");

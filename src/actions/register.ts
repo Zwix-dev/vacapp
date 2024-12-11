@@ -3,6 +3,9 @@ import * as z from 'zod';
 import { getUserByEmail } from "@/data/user";
 import bcrypt from 'bcryptjs';
 import { db } from "@/lib/db";
+import { resend, sendVerificationEmail } from '@/lib/resend';
+import { EmailTemplate } from '@/components/email-template';
+import { generateVerificationToken } from '@/lib/tokens';
 
 const registerSchema = z.object({
     email: z.string().email(),
@@ -36,13 +39,18 @@ export async function register(formData: FormData) {
             return { error: "Un compte existe déjà avec cet e-mail." };
         }
 
-        await db.user.create({
-            data: {
-                name,
-                email,
-                password: hashedPassword,
-            },
-        });
+        // await db.user.create({
+        //     data: {
+        //         name,
+        //         email,
+        //         password: hashedPassword,
+        //     },
+        // });
+        const tokenVerif = await generateVerificationToken(email)
+
+        if(tokenVerif) {
+             sendVerificationEmail(email,tokenVerif.token)
+        }
 
         return { success: "Compte créer avec succès" };
     } catch (err) {

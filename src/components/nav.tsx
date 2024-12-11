@@ -17,14 +17,12 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { User, LogOut, Settings, LifeBuoy, AppWindow } from "lucide-react"
-import {logout} from '@/actions/logout';
-export default function Nav() {
 
+export default function Nav() {
     const { data: session } = useSession();
     if (session) {
         console.log(session)
     }
-
     const [openNav, setOpenNav] = React.useState(false);
     const handleWindowResize = () =>
         window.innerWidth >= 960 && setOpenNav(false);
@@ -43,7 +41,7 @@ export default function Nav() {
                     Vac'Acti<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8 inline align-middle text-yellow-400"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>n
                 </div>
                 <div className="hidden md:flex items-center space-x-6 text-sm text-gray-500">
-                    <a href="#" className="text-indigo-900 font-semibold hover:text-yellow-300">
+                    <a href="/" className="text-indigo-900 font-semibold hover:text-yellow-300">
                         Accueil
                     </a>
                     <a href="#features" className="text-indigo-900 font-semibold hover:text-yellow-300">
@@ -53,13 +51,9 @@ export default function Nav() {
                         Prix
                     </a>
                 </div>
-             
-        
                 <div className=" hidden md:flex  items-center space-x-4">
                     {session ?
-                    
                         <DropdownMenu>
-                            
                             <DropdownMenuTrigger asChild>
                                 <button className="rounded-xl outline-none">
                                     <Avatar>
@@ -93,12 +87,10 @@ export default function Nav() {
                                     </DropdownMenuItem>
                                 </DropdownMenuGroup>
 
-
                             </DropdownMenuContent>
 
 
                         </DropdownMenu>
-
                         :
                         <div className="flex flex-row items-center justify-center">
                            
@@ -132,7 +124,7 @@ export default function Nav() {
                 <div className="md:hidden bg-white shadow-md py-4">
                     <div className="flex flex-col items-center justify-center space-y-4">
                         <a
-                            href="#"
+                            href="/"
                             className="text-indigo-900 font-semibold hover:text-yellow-300"
                         >
                             Accueil
