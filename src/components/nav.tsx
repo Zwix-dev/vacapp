@@ -16,14 +16,14 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from "@/components/ui/sheet"
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "@/components/ui/popover"
 
 export default function Nav() {
     const { data: session } = useSession()
-    const [isOpen, setIsOpen] = React.useState(false)
+    const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
 
     const navItems = [
         { href: "/", label: "Accueil" },
@@ -101,8 +101,8 @@ export default function Nav() {
                         )}
                     </div>
                     <div className="flex items-center space-x-4 pr-4 md:hidden">
-                        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                            <SheetTrigger asChild>
+                        <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
+                            <PopoverTrigger asChild>
                                 <Button
                                     variant="ghost"
                                     className="md:hidden"
@@ -111,15 +111,15 @@ export default function Nav() {
                                     <Menu className="h-5 w-5" />
                                     <span className="sr-only">Toggle menu</span>
                                 </Button>
-                            </SheetTrigger>
-                            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                            </PopoverTrigger>
+                            <PopoverContent className="w-screen">
                                 <nav className="flex flex-col items-center space-y-4">
                                     {navItems.map((item) => (
                                         <Link
                                             key={item.href}
                                             href={item.href}
                                             className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-                                            onClick={() => setIsOpen(false)}
+                                            onClick={() => setIsPopoverOpen(false)}
                                         >
                                             {item.label}
                                         </Link>
@@ -127,7 +127,6 @@ export default function Nav() {
 
                                     {session && (
                                         <div className="flex flex-col items-center space-y-4">
-                                            {/* Avatar */}
                                             <DropdownMenu>
                                                 <DropdownMenuTrigger asChild>
                                                     <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -168,15 +167,13 @@ export default function Nav() {
                                         </div>
                                     )}
                                     {!session && (
-                                        <Button asChild className="w-full" onClick={() => setIsOpen(false)}>
+                                        <Button asChild className="w-full" onClick={() => setIsPopoverOpen(false)}>
                                             <Link href="/api/auth/signin">Log In</Link>
                                         </Button>
                                     )}
                                 </nav>
-                            </SheetContent>
-                        </Sheet>
-
-
+                            </PopoverContent>
+                        </Popover>
                     </div>
                 </div>
             </div>
