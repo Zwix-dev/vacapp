@@ -3,23 +3,24 @@
 import { useState } from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, XCircle } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import { newVerification } from '@/actions/new-verification'
+import { useRouter } from "next/navigation";
 
 export default function VerificationForm() {
     const [verificationStatus, setVerificationStatus] = useState<'idle' | 'verifying' | 'success' | 'error'>('idle')
     const searchParams = useSearchParams();
     const token = searchParams.get('token');
+    const router = useRouter()
     const handleVerification = async () => {
         setVerificationStatus('verifying')
         if (token) {
             try {
                 const verificationResponse = await newVerification(token)
-                console.log(verificationResponse)
                 await new Promise(resolve => setTimeout(resolve, 2000))
                 if (verificationResponse.success) {
                     setVerificationStatus('success')
+                    router.push('/')
                 }
 
             } catch (error) {

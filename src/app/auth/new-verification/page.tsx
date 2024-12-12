@@ -1,7 +1,7 @@
 import Footer from '@/components/footer'
 import Nav from '@/components/nav'
 import VerificationForm from '@/components/new-verification-form'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 
 const NewVerificationPage = () => {
@@ -9,7 +9,9 @@ const NewVerificationPage = () => {
     <div className="flex flex-col h-screen">
       <Nav />
       <div className="flex-grow flex items-center justify-center px-4">
-        <VerificationForm></VerificationForm>
+        <Suspense>
+          <VerificationForm></VerificationForm>
+        </Suspense>
       </div>
       <Footer />
     </div>

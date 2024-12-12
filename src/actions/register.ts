@@ -39,17 +39,17 @@ export async function register(formData: FormData) {
             return { error: "Un compte existe déjà avec cet e-mail." };
         }
 
-        // await db.user.create({
-        //     data: {
-        //         name,
-        //         email,
-        //         password: hashedPassword,
-        //     },
-        // });
+        await db.user.create({
+            data: {
+                name,
+                email,
+                password: hashedPassword,
+            },
+        });
         const tokenVerif = await generateVerificationToken(email)
 
         if(tokenVerif) {
-             sendVerificationEmail(email,tokenVerif.token)
+            sendVerificationEmail(email,tokenVerif.token)
         }
 
         return { success: "Compte créer avec succès" };

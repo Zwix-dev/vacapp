@@ -13,19 +13,29 @@ import { Label } from "@/components/ui/label"
 import { signIn } from "next-auth/react"
 import { useState } from "react"
 import { doCredentialLogin } from "@/actions/login"
-import { FaGoogle, FaGithub  } from "react-icons/fa";
+import { FaGoogle, FaGithub } from "react-icons/fa";
+import { useToast } from "@/hooks/use-toast"
 export function LoginForm() {
   const [error, setError] = useState("");
-
+  const { toast } = useToast()
   async function onSubmit(event: { preventDefault: () => void; currentTarget: HTMLFormElement | undefined }) {
     event.preventDefault();
     try {
       const formData = new FormData(event.currentTarget);
       const response = await doCredentialLogin(formData);
       if (!!response.error) {
+        toast({
+          description: `${response.error}`,
+          variant: "destructive",
+        })
         setError(response.error);
-      }
+      } else {
+        toast({
+          description: "Connexion réussie",
+        })
 
+      }
+   
     } catch (e) {
 
       setError("E-mail ou mot de passe incorrect");
@@ -60,24 +70,19 @@ export function LoginForm() {
                   Mot-de-passe oublié ?
                 </Link>
               </div>
-              {error == "Invalid password" && <div className="">
-                <Input id="password" name="password" type="password" className="border-red-500" required />
-                <div className="text-sm mx-auto text-red-500">Mot de passe invalide</div>
-              </div>}
               <Input id="password" name="password" type="password" required />
-              <div className="text-sm text-red-500">{error}</div>
+              <div className="flex flex-row gap-4">
+                <Button variant="outline" className="w-full" onClick={() => signIn('google')}>
+                  <FaGoogle />
+                </Button>
+                <Button variant="outline" className="w-full" onClick={() => signIn('github')}>
+                  <FaGithub />
+                </Button>
+              </div>
             </div>
             <Button type="submit" className="w-full bg-teal-500">
               Login
             </Button>
-            <div className="flex flex-row gap-4">
-              <Button variant="outline" className="w-full" onClick={() => signIn('google')}>
-                <FaGoogle />
-              </Button>
-              <Button variant="outline" className="w-full" onClick={() => signIn('github')}>
-                <FaGithub />
-              </Button>
-            </div>
           </div>
           <div className="mt-4 text-center text-sm">
             Don&apos;t have an account?{" "}

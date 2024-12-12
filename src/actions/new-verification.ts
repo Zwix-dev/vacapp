@@ -30,7 +30,7 @@ export async function newVerification(token: string) {
     });
 
     await db.verificationToken.delete({
-        where: { identifier_token: {token:existingToken.token, identifier:existingUser.email} }
+        where: { token:existingToken.token }
     });
 
     return { success: 'Email verified!' };

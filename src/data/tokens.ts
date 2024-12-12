@@ -21,3 +21,25 @@ export const getVerificationTokenByToken = async (token: string) => {
         return null;
     }
 };
+
+export const getPasswordTokenByEmail = async (email: string) => {
+    try {
+        const verificationToken = await db.passwordResetToken.findFirst({ where: { email: email } });
+        return verificationToken;
+    } catch {
+        return null
+    }
+}
+export const getPasswordResetTokenByToken = async (token: string) => {
+    try {
+        const verificationToken = await db.passwordResetToken.findFirst({
+            where: {
+                token: token,
+            },
+        });
+        return verificationToken;
+    } catch (error) {
+        console.error("Error fetching verification token:", error);
+        return null;
+    }
+};

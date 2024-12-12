@@ -9,8 +9,8 @@ import bcrypt, { compare } from "bcryptjs";
 import { NextAuthOptions } from "next-auth";
 
 
-export const authOptions : NextAuthOptions = {
-  pages : {
+export const authOptions: NextAuthOptions = {
+  pages: {
     signIn: "/auth/login",
   },
   providers: [
@@ -24,39 +24,40 @@ export const authOptions : NextAuthOptions = {
     }),
     CredentialsProvider({
       credentials: {
-        email: { label: "Email", type: "email"},
+        email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (credentials) {
-          const user = await getUserByEmail(credentials.email);
-          if (user) {
-            const isMatch = await compare(credentials.password,user.password);
-            if (isMatch) {
-              
-              return user;
-            } else {
-              throw new Error("Invalid password.");
-            }
+        if (!credentials) {
+          throw new Error("Invalid credentials.");
+        }
+        const user = await getUserByEmail(credentials.email);
+        if (!user) {
+          throw new Error("User not found.");
+        }
+        if (!user.emailVerified) {
+           throw new Error("E-mail not verified.");
+        }
+        if (user.password) {
+          const isMatch = await compare(credentials.password, user.password);
+          if (isMatch) {
+            return user;
           } else {
-            throw new Error("User not found.");
+            throw new Error("Invalid password.");
           }
         } else {
-          throw new Error("Invalid credentials.");
+          throw new Error("Password cannot be null.");
         }
       }
     }),
   ],
   callbacks: {
-    async jwt({token}) {
+    async jwt({ token }) {
       if (!token.sub) return token;
       const existingUser = await getUserById(token.sub);
-     
       return token
     },
-    session({session, token}) {
-      
-      
+    session({ session, token }) {
       return session
     }
   },
