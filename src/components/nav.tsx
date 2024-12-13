@@ -75,7 +75,7 @@ export default function Nav() {
         <nav className="w-full border-b">
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between ">
-                    <Link href="/" className="flex items-center space-x-2 text-indigo-900">
+                    <Link href="/" className="flex items-center space-x-1 text-indigo-900">
                         <h1 className="text-xl font-semibold text-indigo-900">Vac&apos;Acti</h1>
                         <Sun className="h-6 w-6 text-yellow-400" />
                         <h1 className="text-xl font-semibold text-indigo-900">n</h1>
