@@ -167,7 +167,7 @@ export default function Nav() {
                                         </div>
                                     )}
                                     {!session && ( 
-                                        <Button asChild className="w-fullbg-teal-500 hover:bg-teal-700" onClick={() => setIsPopoverOpen(false)}>
+                                        <Button asChild className="w-fullbg-teal-500 bg-teal-500 hover:bg-teal-7000" onClick={() => setIsPopoverOpen(false)}>
                                             <Link href="/api/auth/signin">Log In</Link>
                                         </Button>
                                     )}
