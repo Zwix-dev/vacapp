@@ -66,7 +66,7 @@ export function LoginForm() {
             <div className="grid gap-2">
               <div className="flex items-center">
                 <Label htmlFor="password">Mot-de-passe</Label>
-                <Link href="#" className="ml-auto inline-block text-sm underline">
+                <Link href="/auth/pass-reset" className="ml-auto inline-block text-sm underline">
                   Mot-de-passe oublié ?
                 </Link>
               </div>
@@ -80,7 +80,7 @@ export function LoginForm() {
                 </Button>
               </div>
             </div>
-            <Button type="submit" className="w-full bg-teal-500">
+            <Button type="submit" className="w-full bg-teal-500 hover:bg-teal-700">
               Login
             </Button>
           </div>

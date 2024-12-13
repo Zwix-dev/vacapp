@@ -53,7 +53,7 @@ export function RegisterForm() {
                         <Label htmlFor="confirm-password" >Confirm Password</Label>
                         <Input id="confirm-password" name='confirm-password' type="password" required />
                     </div>
-                    <Button className="w-full bg-teal-500" type="submit" disabled={isLoading}>
+                    <Button className="w-full bg-teal-500 hover:bg-teal-700" type="submit" disabled={isLoading}>
                         {isLoading ? (
                             <span className="flex items-center justify-center">
                                 <Loader2 className="animate-spin"></Loader2>

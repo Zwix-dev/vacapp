@@ -15,7 +15,7 @@ export default function Home() {
                         Cet outil simplifie et centralise la gestion des demandes de congé au sein de votre entreprise. Les employés peuvent facilement soumettre leurs demandes, tandis que les responsables peuvent les examiner et les approuver efficacement. Il réduit les tâches administratives, améliore la communication et garantit un processus fluide et transparent pour toutes les personnes concernées.
                     </p>
                     <div className="flex flex-col justify-center items-center m-16">
-                        <button className="bg-teal-500 p-3 rounded-full w-64 font-semibold text-white font-sans">
+                        <button className="bg-teal-500 hover:bg-teal-700 p-3 rounded-full w-64 font-semibold text-white font-sans">
                             Acheter maintenant
                         </button>
                         <button className="text-indigo-900 font-sans m-4 underline">
