@@ -1,9 +1,9 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import { signOut, useSession } from "next-auth/react"
-import { Sun, Menu, User, LogOut, Settings, AppWindow } from 'lucide-react'
+import { Sun, Menu, User, LogOut, Settings, AppWindow, Moon } from 'lucide-react'
 import { Avatar, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -20,11 +20,13 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover"
-
+import { useTheme } from "next-themes"
+import { Switch } from "./ui/switch"
 export default function Nav() {
     const { data: session } = useSession()
-    const [isPopoverOpen, setIsPopoverOpen] = React.useState(false)
+    const [isPopoverOpen, setIsPopoverOpen] = useState(false)
 
+    const { theme, setTheme } = useTheme()
     const navItems = [
         { href: "/", label: "Accueil" },
         { href: "#features", label: "Fonctionnalités" },
@@ -74,11 +76,11 @@ export default function Nav() {
     return (
         <nav className="w-full border-b">
             <div className="container mx-auto px-4">
-                <div className="flex h-16 items-center justify-between ">
-                    <Link href="/" className="flex items-center space-x-1 text-indigo-900">
-                        <h1 className="text-xl font-semibold text-indigo-900">Vac&apos;Acti</h1>
+                <div className="flex h-16 items-center justify-between ml-4">
+                    <Link href="/" className="flex items-center space-x-1 text-indigo-900 dark:text-white">
+                        <h1 className="text-xl font-semibold text-indigo-900 dark:text-white">Vac&apos;Acti</h1>
                         <Sun className="h-6 w-6 text-yellow-400" />
-                        <h1 className="text-xl font-semibold text-indigo-900">n</h1>
+                        <h1 className="text-xl font-semibold text-indigo-900 dark:text-white">n</h1>
                     </Link>
                     <div className="hidden md:flex md:items-center md:space-x-6">
                         {navItems.map((item) => (
@@ -99,6 +101,18 @@ export default function Nav() {
                                 <Link href="/api/auth/signin">Log In</Link>
                             </Button>
                         )}
+                        <div className="flex items-center gap-4">
+
+                            <div className="flex w-[16px] items-center">
+                                <button className="border-none bg-transparent" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+                                    {theme === "dark" ? (
+                                        <Moon className="h-[16px] w-[16px] rotate-90 transition-all dark:rotate-0" />
+                                    ) : (
+                                        <Sun className="h-[16px] w-[16px] rotate-0 transition-all dark:-rotate-90" />
+                                    )}
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div className="flex items-center space-x-4 pr-4 md:hidden">
                         <Popover open={isPopoverOpen} onOpenChange={setIsPopoverOpen}>
@@ -166,11 +180,18 @@ export default function Nav() {
                                             </DropdownMenu>
                                         </div>
                                     )}
-                                    {!session && ( 
+                                    {!session && (
                                         <Button asChild className="w-fullbg-teal-500 bg-teal-500 hover:bg-teal-7000" onClick={() => setIsPopoverOpen(false)}>
                                             <Link href="/api/auth/signin">Log In</Link>
                                         </Button>
                                     )}
+                                    <button className="border-none bg-transparent" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+                                        {theme === "dark" ? (
+                                            <Moon className="h-[16px] w-[16px] rotate-90 transition-all dark:rotate-0" />
+                                        ) : (
+                                            <Sun className="h-[16px] w-[16px] rotate-0 transition-all dark:-rotate-90" />
+                                        )}
+                                    </button>
                                 </nav>
                             </PopoverContent>
                         </Popover>

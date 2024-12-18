@@ -46,7 +46,7 @@ export function LoginForm() {
     <Card className="mx-auto max-w-sm">
       <form onSubmit={onSubmit}>
         <CardHeader>
-          <CardTitle className="text-2xl text-indigo-900">Login</CardTitle>
+          <CardTitle className="text-2xl text-indigo-900 dark:text-white">Login</CardTitle>
           <CardDescription>
             Entrez votre email ci-dessous pour vous connecter.
           </CardDescription>
