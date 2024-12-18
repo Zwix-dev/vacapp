@@ -37,7 +37,7 @@ export default function ContactSection() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
     try {
-      await submitContactForm(values)
+      // await submitContactForm(values)
       form.reset()
       toast({
         title: "Formulaire envoyé",
