@@ -343,7 +343,7 @@ export default function Component() {
   )
 }
 
-function FileIcon(props) {
+function FileIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -364,7 +364,7 @@ function FileIcon(props) {
 }
 
 
-function HomeIcon(props) {
+function HomeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -385,7 +385,7 @@ function HomeIcon(props) {
 }
 
 
-function LineChartIcon(props) {
+function LineChartIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -406,7 +406,7 @@ function LineChartIcon(props) {
 }
 
 
-function ListFilterIcon(props) {
+function ListFilterIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -428,7 +428,7 @@ function ListFilterIcon(props) {
 }
 
 
-function Package2Icon(props) {
+function Package2Icon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -450,7 +450,7 @@ function Package2Icon(props) {
 }
 
 
-function PackageIcon(props) {
+function PackageIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -473,7 +473,7 @@ function PackageIcon(props) {
 }
 
 
-function PanelLeftIcon(props) {
+function PanelLeftIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -494,7 +494,7 @@ function PanelLeftIcon(props) {
 }
 
 
-function SearchIcon(props) {
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -515,7 +515,7 @@ function SearchIcon(props) {
 }
 
 
-function SettingsIcon(props) {
+function SettingsIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -536,7 +536,7 @@ function SettingsIcon(props) {
 }
 
 
-function ShoppingCartIcon(props) {
+function ShoppingCartIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -558,7 +558,7 @@ function ShoppingCartIcon(props) {
 }
 
 
-function UsersIcon(props) {
+function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
