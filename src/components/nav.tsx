@@ -21,7 +21,7 @@ import {
     PopoverTrigger,
 } from "@/components/ui/popover"
 import { useTheme } from "next-themes"
-import { Switch } from "./ui/switch"
+
 export default function Nav() {
     const { data: session } = useSession()
     const [isPopoverOpen, setIsPopoverOpen] = useState(false)

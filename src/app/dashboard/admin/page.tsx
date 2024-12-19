@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Page() {
   return (
-    <div>wlecome to admin ! </div>
+    <div className='text-white text-3xl'>wlecome to admin ! </div>
   )
 }

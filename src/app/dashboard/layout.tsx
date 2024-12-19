@@ -1,12 +1,29 @@
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { RHSidebar } from '@/components/sidebar'
+import Nav from '@/components/nav'
+import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar'
+import { ThemeProvider } from 'next-themes'
 
-export default function LayoutDashborad({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <SidebarProvider>
-      <main>
-        <SidebarTrigger />
-        {children}
-      </main>
-    </SidebarProvider>
+
+
+
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <SidebarProvider>
+        <RHSidebar />
+        <SidebarInset>
+          <div className='flex justify-center'>
+            {children}
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </ThemeProvider>
+
+
+
   )
 }
