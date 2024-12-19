@@ -17,6 +17,7 @@ import {
     SidebarMenuSub,
     SidebarMenuSubItem,
     SidebarRail,
+    SidebarTrigger,
     useSidebar,
 } from '@/components/ui/sidebar'
 import {
@@ -88,6 +89,8 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const { theme, setTheme } = useTheme()
 
     return (
+        <>
+        { isMobile && <SidebarTrigger /> }
         <Sidebar {...props} collapsible="icon" className="dark:bg-inherit" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
             <SidebarHeader className="flex items-center justify-between p-4 w-full">
                 {open && (
@@ -173,6 +176,8 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarFooter>
             <SidebarRail />
         </Sidebar>
+        </>
+        
     )
 }
 
