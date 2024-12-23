@@ -11,3 +11,4 @@ export const authRoutes = [
     '/auth/register',
 
 ];
+export const adminRoutesPrefix = "/dashboard/admin"

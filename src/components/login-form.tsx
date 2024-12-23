@@ -23,15 +23,18 @@ export function LoginForm() {
     try {
       const formData = new FormData(event.currentTarget);
       const response = await doCredentialLogin(formData);
-      if (!!response.error) {
+      if (!!response?.error) {
         toast({
           description: `${response.error}`,
           variant: "destructive",
+          duration: 2200,
+          
         })
         setError(response.error);
       } else {
         toast({
           description: "Connexion réussie",
+          duration: 2200,
         })
 
       }

@@ -1,4 +1,4 @@
-"use client"
+
 import { SidebarTrigger, useSidebar } from '@/components/ui/sidebar'
 import React from 'react'
 

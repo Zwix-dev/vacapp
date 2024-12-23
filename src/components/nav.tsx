@@ -57,7 +57,7 @@ export default function Nav() {
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <AppWindow className="mr-2 h-4 w-4" />
-                        <span>Dashboard</span>
+                        <Link href="/dashboard">Dashboard</Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                         <Settings className="mr-2 h-4 w-4" />
@@ -87,7 +87,7 @@ export default function Nav() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-gray-200 hover:text-gray-800 dark:hover:bg-gray-900 p-2 rounded-sm"
                             >
                                 {item.label}
                             </Link>
@@ -164,7 +164,7 @@ export default function Nav() {
                                                         </DropdownMenuItem>
                                                         <DropdownMenuItem>
                                                             <AppWindow className="mr-2 h-4 w-4" />
-                                                            <span>Dashboard</span>
+                                                            <Link href="/dashboard">Dashboard</Link>
                                                         </DropdownMenuItem>
                                                         <DropdownMenuItem>
                                                             <Settings className="mr-2 h-4 w-4" />

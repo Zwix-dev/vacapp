@@ -7,7 +7,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { db } from "@/lib/db";
 import bcrypt, { compare } from "bcryptjs";
 import { NextAuthOptions } from "next-auth";
-
+import { getServerSession } from "next-auth/next"
 
 export const authOptions: NextAuthOptions = {
   pages: {
