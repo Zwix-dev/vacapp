@@ -17,6 +17,7 @@ export default function RootLayout({
         <RHSidebar />
         <SidebarInset>
           <div className='flex justify-center'>
+            
             {children}
           </div>
         </SidebarInset>

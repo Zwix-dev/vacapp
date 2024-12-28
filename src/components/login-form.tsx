@@ -15,9 +15,11 @@ import { useState } from "react"
 import { doCredentialLogin } from "@/actions/login"
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { useToast } from "@/hooks/use-toast"
+import { useRouter } from "next/navigation"
 export function LoginForm() {
   const [error, setError] = useState("");
   const { toast } = useToast()
+  const router = useRouter();
   async function onSubmit(event: { preventDefault: () => void; currentTarget: HTMLFormElement | undefined }) {
     event.preventDefault();
     try {
@@ -36,9 +38,8 @@ export function LoginForm() {
           description: "Connexion réussie",
           duration: 2200,
         })
-
+        router.push("/dashboard")
       }
-   
     } catch (e) {
 
       setError("E-mail ou mot de passe incorrect");

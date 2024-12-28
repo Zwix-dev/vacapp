@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from 'react'
-import { Menu, User, LogOut, Settings, AppWindow, Calendar, UserCheck, UserMinus, Users, FileText, Briefcase, List, User2, ChevronUp, ChevronDown, UserPlus, TrendingUp, BookOpen, Layers, Clock, Moon, Sun, ChevronUpIcon } from 'lucide-react'
+import { Menu, User, LogOut, Settings, AppWindow, Calendar, UserCheck, UserMinus, Users, FileText, Briefcase, List, User2, ChevronUp, ChevronDown, UserPlus, TrendingUp, BookOpen, Layers, Clock, Moon, Sun, ChevronUpIcon, House } from 'lucide-react'
 import Link from "next/link"
 import {
     Sidebar,
@@ -44,9 +44,9 @@ const menuItems = [
         title: 'Gestion RH',
         icon: Users,
         submenu: [
-            { title: 'Planning', icon: Calendar, url: '/planning' },
-            { title: 'Liste des employés', icon: Users, url: '/employes' },
-            { title: 'Contrats', icon: Briefcase, url: '/contrats' },
+            { title: 'Planning', icon: Calendar, url: '/dashboard/hr/planning' },
+            { title: 'Liste des employés', icon: Users, url: '/dashboard/hr/employes' },
+            { title: 'Contrats', icon: Briefcase, url: '/dashboard/hr/contrats' },
         ]
     },
     {
@@ -120,6 +120,12 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     <SidebarGroup>
                         <SidebarGroupContent>
                             <SidebarMenu>
+                                <SidebarMenuItem >
+                                    <SidebarMenuButton className='hover:bg-black hover:text-white dark:hover:bg-gray-800'>
+                                        <House className="h-5 w-5" />
+                                        <span className="ml-3">Accueil</span>
+                                    </SidebarMenuButton>
+                                </SidebarMenuItem>
                                 {menuItems.map((item) => (
                                     <Collapsible key={item.title} className="group/collapsible my-2">
                                         <SidebarMenuItem>
@@ -189,11 +195,11 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                         <Settings className="mr-2 h-4 w-4" />
                                         <span>Paramètres</span>
                                     </DropdownMenuItem>
-                                    
+
                                     <DropdownMenuItem className='hover:cursor-pointer' onClick={() => signOut({ callbackUrl: '/' })}>
                                         <LogOut className="mr-2 h-4 w-4" /><span>Log out</span>
                                     </DropdownMenuItem>
-                                    
+
                                 </DropdownMenuContent>
                             </DropdownMenu>
                         </SidebarMenuItem>

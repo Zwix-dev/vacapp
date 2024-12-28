@@ -22,13 +22,11 @@ export default function VerificationForm() {
                     setVerificationStatus('success')
                     router.push('/')
                 }
-
             } catch (error) {
                 setVerificationStatus('error')
             }
         }
     }
-
     return (
         <Card>
             <CardHeader>
