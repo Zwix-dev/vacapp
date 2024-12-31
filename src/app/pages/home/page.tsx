@@ -1,12 +1,23 @@
 import ContactSection from "@/components/contact";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
+import PricingTable from "@/components/pricing-table";
 
 export default function Home() {
     return (
         <>
             <Nav></Nav>
-            <section className="lg:pt-20 pt-36">
+            <section className="relative lg:pt-20 pt-36">
+                <div className="absolute inset-0">
+                    <div
+                        className="h-full w-full"
+                        style={{
+                            backgroundImage:
+                                "radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)",
+                            backgroundSize: "40px 40px",
+                        }}
+                    ></div>
+                </div>
                 <div className="container mx-auto text-center px-4">
                     <h1 className="font-bold text-indigo-900 text-3xl sm:text-3xl lg:text-6xl lg:m-16 dark:text-white">
                         Vac'Acti<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-12 h-12 inline align-middle ml-2 text-yellow-400"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>n
@@ -14,15 +25,16 @@ export default function Home() {
                     <p className="mt-4 text-gray-500 text-lg m-16 dark:text-gray-300">
                         Cet outil simplifie et centralise la gestion des demandes de congé au sein de votre entreprise. Les employés peuvent facilement soumettre leurs demandes, tandis que les responsables peuvent les examiner et les approuver efficacement. Il réduit les tâches administratives, améliore la communication et garantit un processus fluide et transparent pour toutes les personnes concernées.
                     </p>
-                    <div className="flex flex-col justify-center items-center m-16 ">
+                    <div className="flex flex-col justify-center items-center py-6 ">
                         <button className="bg-teal-500 hover:bg-teal-700 p-3 rounded-full w-64 font-semibold text-white font-sans">
                             Acheter maintenant
                         </button>
-                        <button className="text-indigo-900 font-sans m-4 underline dark:text-white">
+                        <button className="text-indigo-900 font-sans m-8 underline dark:text-white">
                             En savoir plus
                         </button>
                     </div>
                 </div>
+
             </section>
             <section className="py-10 bg-gray-50 dark:bg-inherit dark:border-gray-800 dark:border-y" id="features">
                 <div className="container mx-auto text-center px-4">
@@ -73,6 +85,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+            <PricingTable></PricingTable>
             <ContactSection></ContactSection>
             {/* <Footer></Footer> */}
         </>
