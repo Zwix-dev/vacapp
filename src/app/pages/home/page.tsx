@@ -1,3 +1,4 @@
+import LogoScroll from "@/components/brands";
 import ContactSection from "@/components/contact";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
@@ -36,7 +37,7 @@ export default function Home() {
                 </div>
 
             </section>
-            <section className="py-10 bg-gray-50 dark:bg-inherit dark:border-gray-800 dark:border-y" id="features">
+            <section className="py-10 bg-gray-50 dark:bg-inherit dark:border-gray-800" id="features">
                 <div className="container mx-auto text-center px-4">
                     <h1 className="text-2xl font-bold text-indigo-900 m-10 dark:text-white">
                         Fonctionnalités
@@ -83,6 +84,11 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section className=" bg-gray-900 flex items-center justify-center p-4 mt-5">
+                <div className="w-full max-w-6xl mx-auto">
+                    <LogoScroll />
                 </div>
             </section>
             <PricingTable></PricingTable>
