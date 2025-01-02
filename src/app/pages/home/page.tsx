@@ -86,7 +86,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className=" bg-gray-900 flex items-center justify-center p-4 mt-5">
+            <section className=" dark:bg-gray-900 flex items-center justify-center p-4 mt-5">
                 <div className="w-full max-w-6xl mx-auto">
                     <LogoScroll />
                 </div>
