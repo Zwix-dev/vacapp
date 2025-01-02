@@ -36,8 +36,8 @@ export default function LogoScroll() {
         { name: 'Canon', url: '/Canon_logo.svg?height=40&width=120' },
         { name: 'Alpine', url: '/Alpine.svg?height=40&width=120' },
      
-        { name: 'Amazon', url: '/Amazon_logo.svg?height=40&width=120' },
-        { name: 'Facebook', url: '/facebook.svg?height=40&width=120' },
+        { name: 'Amazon-2', url: '/Amazon_logo.svg?height=40&width=120' },
+        { name: 'Facebook-2', url: '/facebook.svg?height=40&width=120' },
         { name: 'Tinder-2', url: '/Logo-tinder.svg?height=40&width=120' },
         { name: 'Airbnb-2', url: '/Airbnb_Logo.svg?height=40&width=120' },
         { name: 'Cadbury-2', url: '/Cadbury.svg?height=40&width=120' },
@@ -55,22 +55,10 @@ export default function LogoScroll() {
               background: 'radial-gradient(circle at 50% 50%, var(--tw-gradient-from) 0%, var(--tw-gradient-to) 70%)',
             }}
           ></div>
-          <div
-            ref={scrollRef}
-            className="flex gap-16 overflow-hidden py-8 px-4"
-          >
+          <div ref={scrollRef} className="flex gap-16 overflow-hidden py-8 px-4">
             {logos.map((logo) => (
-              <div
-                key={logo.name}
-                className="flex items-center justify-center min-w-[120px] opacity-70 hover:opacity-100 transition-opacity duration-300"
-              >
-                <Image
-                  src={logo.url}
-                  alt={logo.name}
-                  width={120}
-                  height={40}
-                  className="w-auto h-8 object-contain brightness-0 dark:invert"
-                />
+              <div key={logo.name} className="flex items-center justify-center min-w-[120px] opacity-70 hover:opacity-100 transition-opacity duration-300">
+                <Image src={logo.url} alt={logo.name} width={120} height={40} className="w-auto h-8 object-contain brightness-0 dark:invert"/>
               </div>
             ))}
           </div>

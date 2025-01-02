@@ -37,7 +37,7 @@ export default function Home() {
                 </div>
 
             </section>
-            <section className="py-10 bg-gray-50 dark:bg-inherit dark:border-gray-800" id="features">
+            <section className="py-10 bg-gray-50 dark:bg-inherit dark:border-gray-800 border-t" id="features">
                 <div className="container mx-auto text-center px-4">
                     <h1 className="text-2xl font-bold text-indigo-900 m-10 dark:text-white">
                         Fonctionnalités

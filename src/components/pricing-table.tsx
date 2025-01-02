@@ -42,8 +42,7 @@ export default function PricingTable() {
         { name: "Employés illimités", included: true },
         { name: "Suivi de avancé des congés", included: true },
         { name: "Notifications par e-mail & SMS", included: true },
-        { name: "Rapports et analyses de performances avancés", included: true },
-        { name: "Support en ligne 24/24", included: true },
+        { name: "Rapports et analyses de performances avancés", included: true }
       ],
       cta: "Souscrire",
       dotColor: "from-yellow-400 to-yellow-600",
