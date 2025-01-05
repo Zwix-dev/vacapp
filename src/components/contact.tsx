@@ -83,7 +83,7 @@ export default function ContactSection() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Nom</FormLabel>
-                      <FormControl className='dark:bg-gray-200'>
+                      <FormControl className='dark:bg-gray-800 dark:border-gray-700'>
                         <Input placeholder="Votre nom" {...field} />
                       </FormControl>
                       <FormMessage />
@@ -96,7 +96,7 @@ export default function ContactSection() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Email</FormLabel>
-                      <FormControl className='dark:bg-gray-200'>
+                      <FormControl className='dark:bg-gray-800 dark:border-gray-700'>
                         <Input type="email" placeholder="votre@email.com" {...field} />
                       </FormControl>
                       <FormMessage />
@@ -109,7 +109,7 @@ export default function ContactSection() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Message</FormLabel>
-                      <FormControl className='dark:bg-gray-200'>
+                      <FormControl className='dark:bg-gray-800 dark:border-gray-700'>
                         <Textarea placeholder="Votre message ici..." {...field} />
                       </FormControl>
                       <FormMessage />

@@ -30,7 +30,7 @@ export default function Home() {
                         <button className="bg-teal-500 hover:bg-teal-700 p-3 rounded-full w-64 font-semibold text-white font-sans">
                             Acheter maintenant
                         </button>
-                        <button className="text-indigo-900 font-sans m-8 underline dark:text-white">
+                        <button className="text-indigo-900 font-sans m-8 underline  dark:text-white">
                             En savoir plus
                         </button>
                     </div>
