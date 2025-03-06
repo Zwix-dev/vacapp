@@ -34,11 +34,8 @@ import {
 import { useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-import { checkLogin } from '@/actions/checkLogin'
 import { signOut, useSession } from 'next-auth/react'
-import { logout } from '@/actions/logout'
-import router from 'next/router'
-
+import Redeem from '@/components/redeem'
 const menuItems = [
     {
         title: 'Gestion RH',
@@ -46,7 +43,6 @@ const menuItems = [
         submenu: [
             { title: 'Planning', icon: Calendar, url: '/dashboard/hr/planning' },
             { title: 'Liste des employés', icon: Users, url: '/dashboard/hr/employes' },
-            { title: 'Contrats', icon: Briefcase, url: '/dashboard/hr/contrats' },
         ]
     },
     {
@@ -78,9 +74,16 @@ const menuItems = [
         ]
     },
 ];
+interface RHSidebarProps extends React.ComponentProps<typeof Sidebar> {
+   
+    isSub?: number | null | undefined
+ 
+}
 
-
-export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function RHSidebar({isSub,
+    ...props 
+  }: RHSidebarProps) {
+    console.log(props)
     const {
         state,
         open,
@@ -90,11 +93,9 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         isMobile,
         toggleSidebar,
     } = useSidebar()
-    const [isHovered, setIsHovered] = useState(false);
     const { theme, setTheme } = useTheme()
     const session = useSession();
-
-    console.log(session);
+   
     return (
         <>
             {isMobile && <SidebarTrigger />}
@@ -116,16 +117,20 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                         </div>
                     )}
                 </SidebarHeader>
+                
                 <SidebarContent className='flex mt-28'>
                     <SidebarGroup>
                         <SidebarGroupContent>
+                            {isSub && 
                             <SidebarMenu>
+                                
                                 <SidebarMenuItem >
                                     <SidebarMenuButton className='hover:bg-black hover:text-white dark:hover:bg-gray-800'>
                                         <House className="h-5 w-5" />
                                         <span className="ml-3">Accueil</span>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
+                                
                                 {menuItems.map((item) => (
                                     <Collapsible key={item.title} className="group/collapsible my-2">
                                         <SidebarMenuItem>
@@ -154,11 +159,15 @@ export function RHSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                                     </Collapsible>
                                 ))}
                             </SidebarMenu>
+  }
                         </SidebarGroupContent>
                     </SidebarGroup>
                 </SidebarContent>
                 <SidebarFooter onClick={() => setOpen(true)}>
                     <SidebarMenu>
+                    {!isSub &&  <Redeem email="arthur.duval18@gmail.com"></Redeem> }
+                   
+
                         <SidebarMenuItem>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>

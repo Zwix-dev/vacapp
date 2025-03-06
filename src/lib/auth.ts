@@ -55,9 +55,17 @@ export const authOptions: NextAuthOptions = {
     async jwt({ token }) {
       if (!token.sub) return token;
       const existingUser = await getUserById(token.sub);
+      if(existingUser) {
+        token.codeEtablissement = existingUser.codeEtablissement
+      }
       return token
     },
     session({ session, token }) {
+    //   if (session.user) {
+    //     session.user.name = token.name;
+    //     session.user.email = token.email as string;
+    //     session.user.codeEtablissement = token.codeEtablissement;
+    // }
       return session
     }
   },

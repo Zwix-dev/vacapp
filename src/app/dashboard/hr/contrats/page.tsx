@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function page() {
+export default function Contrats() {
     return (
         <div className="flex min-h-screen w-full justify-center bg-muted/40">
             <div>
