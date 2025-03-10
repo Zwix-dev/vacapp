@@ -27,8 +27,10 @@ model User {
   updatedAt     DateTime        @updatedAt
   customer      Boolean?
   codeEtablissement Int?
+  licenses Licences[]
 
   // stripeCustomerId String?
+  
 
 }
 
@@ -55,7 +57,7 @@ model Account {
 
 model Session {
   sessionToken String   @unique
-  userId       String
+  userId       String   
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   
@@ -96,8 +98,13 @@ model Authenticator {
 model Licences {
   id         String   @id @default(cuid())
   license            String @unique
-  userId             String
+  userId             String  
   expiresAt          DateTime 
+  isActivated        Boolean
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+
 }
 
 model Conges { 

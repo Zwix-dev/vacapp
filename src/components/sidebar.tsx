@@ -121,15 +121,16 @@ export function RHSidebar({isSub,
                 <SidebarContent className='flex mt-28'>
                     <SidebarGroup>
                         <SidebarGroupContent>
-                            {isSub && 
-                            <SidebarMenu>
-                                
-                                <SidebarMenuItem >
+                        
                                     <SidebarMenuButton className='hover:bg-black hover:text-white dark:hover:bg-gray-800'>
                                         <House className="h-5 w-5" />
                                         <span className="ml-3">Accueil</span>
                                     </SidebarMenuButton>
-                                </SidebarMenuItem>
+                                
+                            {isSub && 
+                            <SidebarMenu>
+                                
+                                
                                 
                                 {menuItems.map((item) => (
                                     <Collapsible key={item.title} className="group/collapsible my-2">
@@ -165,7 +166,7 @@ export function RHSidebar({isSub,
                 </SidebarContent>
                 <SidebarFooter onClick={() => setOpen(true)}>
                     <SidebarMenu>
-                    {!isSub &&  <Redeem email="arthur.duval18@gmail.com"></Redeem> }
+       
                    
 
                         <SidebarMenuItem>
